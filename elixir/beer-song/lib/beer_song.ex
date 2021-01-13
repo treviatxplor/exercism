@@ -33,9 +33,9 @@ defmodule BeerSong do
     "Take #{taken_number_of_bottles(number)} down and pass it around, #{number_of_bottles(number - 1)} of beer on the wall."
   end
 
-  def taken_number_of_bottles(1), do: "it"
+  defp taken_number_of_bottles(1), do: "it"
 
-  def taken_number_of_bottles(number), do: "one"
+  defp taken_number_of_bottles(number), do: "one"
 
   defp number_of_bottles(0), do: "no more bottles"
 
