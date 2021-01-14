@@ -14,7 +14,7 @@ defmodule Hamming do
     if String.length(strand1_str) != String.length(strand2_str) do
       {:error, "Lists must be the same length"}
     else
-      distance = Enum.reduce(0..String.length(strand1_str), 0, fn(index, distance) ->
+      distance = Enum.reduce(0..String.length(strand1_str) - 1, 0, fn(index, distance) ->
         if (String.at(strand1_str, index)) != (String.at(strand2_str, index)) do
           distance + 1
         else

@@ -18,7 +18,7 @@ defmodule Scrabble do
     |> String.trim
     |> String.upcase
 
-    Enum.reduce(0..String.length(sanitised_word), 0, fn(index, score) ->
+    Enum.reduce(0..String.length(sanitised_word) - 1, 0, fn(index, score) ->
       score + (@letter_scores[String.at(sanitised_word, index)] || 0)
     end)
   end
