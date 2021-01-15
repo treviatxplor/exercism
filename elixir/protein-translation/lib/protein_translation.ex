@@ -14,7 +14,7 @@ defmodule ProteinTranslation do
     end)
   end
 
-  def split_rna_into_codons(rna) do
+  defp split_rna_into_codons(rna) do
     String.codepoints(rna)
     |> Enum.chunk_every(3)
     |> Enum.reduce([], fn(nucleotide, codons) ->
